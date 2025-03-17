@@ -1,0 +1,52 @@
+/*@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');*/
+
+@layer theme, base, components, utilities;
+@import 'tailwindcss/theme.css' layer(theme);
+@import 'tailwindcss/preflight.css' layer(base); /* comment this line to disable preflight */
+@import 'tailwindcss/utilities.css' layer(utilities);
+
+@config '../../tailwind.config.ts';
+
+/*Guide for creating custom utilities*/
+/*https://cixel.com.au/blog/tailwind-css-v4-functional-utilities*/
+
+@theme {
+  /*--font-monstserrat: 'Montserrat', sans-serif;*/
+  /*--max-width-container: 85rem;*/
+  /*--font-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";*/
+  /*--font-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;*/
+  /*--font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;*/
+
+  /*--breakpoint-sm: 40rem; !* 640px *!*/
+  /*--breakpoint-md: 48rem; !* 768px *!*/
+  /*--breakpoint-lg: 64rem; !* 1024px *!*/
+  /*--breakpoint-xl: 80rem; !* 1280px *!*/
+  /*--breakpoint-2xl: 96rem; !* 1536px *!*/
+}
+
+@theme inline {
+  --text-shadow-xs: 0 0 1px var(--tw-shadow-color, rgb(0 0 0 / 1));
+  --text-shadow-sm: 0 1px 2px var(--tw-shadow-color, rgb(0 0 0 / 1));
+  --text-shadow-md: 0 2px 5px var(--tw-shadow-color, rgb(0 0 0 / 1));
+  --text-shadow-lg: 0 3px 7px var(--tw-shadow-color, rgb(0 0 0 / 1));
+  --text-shadow-xl: 0 4px 9px var(--tw-shadow-color, rgb(0 0 0 / 1));
+  --text-shadow-none: none;
+}
+
+/*prettier-ignore*/
+@utility shadow-text-* {
+  text-shadow: --value(--text-shadow-*);
+  text-shadow: 0 --value(integer)px calc(--value(integer) * 2px) var(--tw-shadow-color);
+}
+
+/*@utility auto-fill-*{*/
+/*  grid-template-columns: repeat(auto-fill, minmax(min(--value([*]), 100%), 1fr));*/
+/*  grid-template-columns: repeat(auto-fill, minmax(min(--value(--text-*), 100%), 1fr));*/
+/*  grid-template-columns: repeat(auto-fill, minmax(min(var(--spacing)* --value(integer), 100%), 1fr));*/
+/*}*/
+
+/*@utility auto-fit-*{*/
+/*  grid-template-columns: repeat(auto-fit, minmax(min(--value([*]), 100%), 1fr));*/
+/*  grid-template-columns: repeat(auto-fit, minmax(min(--value(--text-*), 100%), 1fr));*/
+/*  grid-template-columns: repeat(auto-fit, minmax(min(var(--spacing)* --value(integer), 100%), 1fr));*/
+/*}*/
