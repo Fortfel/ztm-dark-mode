@@ -53,5 +53,10 @@
   },
   "browserslist": [
     "defaults"
-  ]
+  ],
+  "dependencies": {
+    "@fontsource/comfortaa": "^5.2.5",
+    "@fontsource/kaushan-script": "^5.2.5",
+    "@fontsource/oswald": "^5.2.5"
+  }
 }

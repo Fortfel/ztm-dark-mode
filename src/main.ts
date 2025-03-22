@@ -1,4 +1,8 @@
+import '@fontsource/comfortaa'
+import '@fontsource/kaushan-script'
+import '@fontsource/oswald'
 import '@/style/tailwind.css'
+
 import { throwIfNull } from '@/utils'
 
 /**
@@ -7,43 +11,22 @@ import { throwIfNull } from '@/utils'
 type DomReferences = Readonly<{
   /** Reference to the main application container element. */
   app: HTMLElement
-}>
-
-/**
- * Options for configuring the application.
- */
-type Options = Readonly<{
-  attempts: number
-}>
-
-/**
- * Configuration parameters for the application.
- */
-type Parameters = Readonly<{
-  /** Optional configuration options for the application. */
-  options?: Partial<Options>
+  /** Reference to the dark mode toggle element. */
+  darkModeToggle: HTMLInputElement
+  /** Reference to the about section element. */
+  sectionAbout: HTMLElement
 }>
 
 class App {
   public readonly domRefs: DomReferences
-  private readonly options: Options
-  private readonly defaultOptions = {
-    attempts: 5,
-  } as const satisfies Options
 
   /**
    * Creates a new instance of the application.
-   * @param options - Optional configuration for the application.
    */
-  constructor({ options }: Parameters = {}) {
-    this.options = { ...this.defaultOptions, ...options }
+  constructor() {
     this.domRefs = this.initDomRefs()
 
     this.initialize()
-    const div = document.createElement('div')
-    div.className = 'bg-stripes-fuchsia-500 font-sans'
-    div.innerText = 'KEK'
-    this.domRefs.app.appendChild(div)
   }
 
   /**
@@ -53,13 +36,50 @@ class App {
    */
   private initDomRefs(): DomReferences {
     const app = throwIfNull(document.querySelector<HTMLElement>('#app'), 'App element not found')
+    const darkModeToggle = throwIfNull(document.querySelector<HTMLInputElement>('#dark-mode-toggle'), 'Dark mode toggle element not found') // prettier-ignore
+    const sectionAbout = throwIfNull(document.querySelector<HTMLElement>('#about'), 'About section element not found')
 
     return Object.freeze({
       app,
+      darkModeToggle,
+      sectionAbout,
     })
   }
 
-  private initialize(): void {}
+  private initialize(): void {
+    // Set initial theme
+    this.setTheme(document.documentElement.dataset.theme === 'dark')
+
+    this.bindEvents()
+  }
+
+  private bindEvents(): void {
+    this.domRefs.darkModeToggle.addEventListener('change', () => {
+      this.handleDarkModeToggle()
+    })
+  }
+
+  private handleDarkModeToggle(): void {
+    const isDarkMode = this.domRefs.darkModeToggle.checked
+
+    this.setTheme(isDarkMode)
+  }
+
+  private setTheme(isDarkMode: boolean): void {
+    document.documentElement.dataset.theme = isDarkMode ? 'dark' : 'light'
+    localStorage.theme = isDarkMode ? 'dark' : 'light'
+
+    const iconElement = this.domRefs.darkModeToggle.parentNode?.parentNode?.querySelector('i')
+    if (iconElement) {
+      iconElement.classList.replace(isDarkMode ? 'fa-sun' : 'fa-moon', isDarkMode ? 'fa-moon' : 'fa-sun')
+      this.domRefs.darkModeToggle.checked = isDarkMode
+    }
+
+    // Update image sources
+    this.domRefs.sectionAbout.querySelectorAll('img').forEach((img) => {
+      img.src = img.src.replace(isDarkMode ? 'light' : 'dark', isDarkMode ? 'dark' : 'light')
+    })
+  }
 }
 
 new App()

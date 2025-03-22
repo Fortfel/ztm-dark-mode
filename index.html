@@ -1,13 +1,198 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="scroll-smooth" data-theme="">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + TS</title>
+    <title>Light Dark Mode</title>
     <link rel="icon" type="image/png" href="https://www.google.com/s2/favicons?domain=www.fortfel.com" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script>
+      document.documentElement.dataset.theme =
+        localStorage.theme === 'dark' ||
+        (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
+          ? 'dark'
+          : 'light'
+    </script>
   </head>
-  <body class="m-0 flex min-h-screen justify-center bg-slate-900 text-slate-400 antialiased">
-    <div id="app"></div>
+  <body class="bg-background text-background-foreground font-comfortaa m-0 antialiased">
+    <div id="app">
+      <!-- Dark Mode Toggle -->
+      <div class="fixed top-5 right-6 z-100 flex">
+        <div class="flex items-center gap-4 text-sm">
+          <i class="fas fa-sun text-3xl"></i>
+          <label class="relative inline-block h-8.5 w-15">
+            <input type="checkbox" class="peer hidden" id="dark-mode-toggle" />
+            <span
+              class="peer-checked:bg-primary absolute inset-0 cursor-pointer rounded-4xl bg-[#cccccc] transition before:absolute before:bottom-1 before:left-1 before:size-6.5 before:rounded-full before:bg-white before:transition before:duration-300 before:ease-in-out peer-checked:before:translate-x-6.5"
+            ></span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Navigation -->
+      <header
+        class="bg-background/90 line-b line-color-secondary/50 @container fixed inset-x-0 top-0 z-10 flex h-16 items-center justify-start px-6 pt-3 lg:px-10"
+      >
+        <nav
+          id="nav"
+          class="font-oswald flex flex-wrap items-center gap-4 text-base font-bold tracking-[3px] uppercase sm:gap-6 sm:!text-2xl @sm:text-lg"
+        >
+          <a
+            class="text-primary hover:text-background-foreground border-b-3 border-b-transparent hover:border-b-current"
+            href="#home"
+            >Home</a
+          >
+          <a
+            class="text-primary hover:text-background-foreground border-b-3 border-b-transparent hover:border-b-current"
+            href="#about"
+            >About</a
+          >
+          <a
+            class="text-primary hover:text-background-foreground border-b-3 border-b-transparent hover:border-b-current"
+            href="#projects"
+            >Projects</a
+          >
+          <a
+            class="text-primary hover:text-background-foreground border-b-3 border-b-transparent hover:border-b-current"
+            href="#contact"
+            >Contact</a
+          >
+        </nav>
+      </header>
+
+      <!-- Main Content -->
+      <main class="flex min-h-dvh flex-col pt-16">
+        <div
+          class="grid flex-1 grid-cols-[1fr_var(--gutter-width)_minmax(0,var(--breakpoint-2xl))_var(--gutter-width)_1fr] grid-rows-[1fr_auto] overflow-clip [--gutter-width:--spacing(6)] lg:[--gutter-width:--spacing(10)]"
+        >
+          <div
+            class="bg-stripes-secondary/20 border-x-secondary/20 col-start-2 row-span-full row-start-1 border-x bg-[size:10px_10px] bg-fixed max-sm:hidden"
+          ></div>
+          <div
+            class="border-x-secondary/20 bg-stripes-secondary/20 bg-stripes-angle-45 col-start-4 row-span-full row-start-1 border-x bg-[size:10px_10px] bg-fixed max-sm:hidden"
+          ></div>
+          <div class="col-start-3 row-start-1 max-sm:col-span-full max-sm:col-start-1">
+            <!-- Home -->
+            <section id="home" class="flex min-h-dvh flex-col items-center justify-center gap-6 px-4 sm:px-6">
+              <h1>Custom Title Here</h1>
+              <div class="line-y line-color-secondary/50 bg-background text-background-foreground py-5 text-center">
+                <h2>Welcome to the Website!</h2>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. A alias beatae esse in natus neque, quis sed
+                  totam. Ex numquam, omnis perferendis provident soluta vero! Aliquam architecto asperiores at beatae
+                  blanditiis consectetur consequatur delectus dolor doloremque doloribus ea esse eum expedita, facere
+                  harum illum in ipsa ipsam ipsum iste maiores minus omnis perspiciatis porro possimus praesentium
+                  provident quas qui quis ratione repudiandae sequi sint sit tempora totam vel velit. Adipisci
+                  aspernatur assumenda cupiditate debitis dolores ea explicabo, facere illo maiores nesciunt, nihil
+                  nulla officiis pariatur praesentium provident quam qui, quibusdam recusandae rem repudiandae sapiente
+                  sed sequi sit tempore veritatis voluptas.
+                </p>
+              </div>
+            </section>
+
+            <!-- About -->
+            <section id="about" class="flex min-h-dvh flex-col items-center justify-center gap-6 px-4 sm:px-6">
+              <h1>Undraw Illustrations</h1>
+              <div class="flex flex-col items-center justify-center gap-6 sm:flex-row">
+                <div
+                  class="bg-background border-secondary shadow-main flex max-w-md flex-1 flex-col gap-5 rounded-xl border px-2.5 py-5 text-center sm:max-w-auto"
+                >
+                  <h2>Web Innovation</h2>
+                  <img src="/images/undraw_proud_coder_light.svg" alt="Proud Coder" class="aspect-3/2" />
+                </div>
+                <div
+                  class="bg-background border-secondary shadow-main flex max-w-md flex-1 flex-col gap-5 rounded-xl border px-2.5 py-5 text-center sm:max-w-auto"
+                >
+                  <h2>Problem Solving</h2>
+                  <img src="/images/undraw_feeling_proud_light.svg" alt="Feeling Proud" class="aspect-3/2" />
+                </div>
+                <div
+                  class="bg-background border-secondary shadow-main flex max-w-md flex-1 flex-col gap-5 rounded-xl border px-2.5 py-5 text-center sm:max-w-auto sm:max-lg:hidden"
+                >
+                  <h2>High Concept</h2>
+                  <img src="/images/undraw_conceptual_idea_light.svg" alt="Idea" class="aspect-3/2" />
+                </div>
+              </div>
+            </section>
+
+            <!-- Projects -->
+            <section id="projects" class="flex min-h-dvh flex-col items-center justify-center gap-6 px-4 sm:px-6">
+              <h1>Buttons</h1>
+              <div class="flex flex-wrap justify-center gap-4">
+                <button
+                  class="bg-primary focus-visible:outline-primary disabled:hover:bg-primary hover:bg-primary/80 text-primary-foreground w-32 cursor-pointer rounded-md px-5 py-2.5 text-sm font-semibold shadow-[inset_0_20px_4px_-19px_rgba(255,255,255,0.7)] focus-visible:outline-2 focus-visible:outline-offset-2 disabled:cursor-default disabled:opacity-50"
+                >
+                  Primary
+                </button>
+                <button
+                  class="bg-secondary focus-visible:outline-secondary disabled:hover:bg-secondary hover:bg-secondary/80 text-primary-foreground w-32 cursor-pointer rounded-md px-5 py-2.5 text-sm font-semibold shadow-[inset_0_20px_4px_-19px_rgba(255,255,255,0.7)] focus-visible:outline-2 focus-visible:outline-offset-2 disabled:cursor-default disabled:opacity-50"
+                >
+                  Secondary
+                </button>
+                <button
+                  class="bg-primary focus-visible:outline-primary disabled:hover:bg-primary hover:bg-primary/80 text-primary-foreground w-32 cursor-pointer rounded-md px-5 py-2.5 text-sm font-semibold shadow-[inset_0_20px_4px_-19px_rgba(255,255,255,0.7)] focus-visible:outline-2 focus-visible:outline-offset-2 disabled:cursor-default disabled:opacity-50"
+                  disabled
+                >
+                  Disabled
+                </button>
+                <button
+                  class="bg-background focus-visible:outline-primary disabled:hover:bg-background hover:bg-primary hover:text-primary-foreground text-background-foreground ring-primary disabled:hover:text-background-foreground w-32 cursor-pointer rounded-md px-5 py-2.5 text-sm font-semibold ring-2 shadow-xs ring-inset focus-visible:outline-2 focus-visible:outline-offset-2 disabled:cursor-default disabled:opacity-50"
+                >
+                  Outline
+                </button>
+                <button
+                  class="bg-background focus-visible:outline-secondary disabled:hover:bg-background hover:bg-secondary hover:text-primary-foreground text-background-foreground ring-secondary disabled:hover:text-background-foreground w-32 cursor-pointer rounded-md px-5 py-2.5 text-sm font-semibold ring-2 shadow-xs ring-inset focus-visible:outline-2 focus-visible:outline-offset-2 disabled:cursor-default disabled:opacity-50"
+                >
+                  Alt Outline
+                </button>
+                <button
+                  class="bg-background focus-visible:outline-primary disabled:hover:bg-background hover:bg-primary hover:text-primary-foreground disabled:hover:text-background-foreground text-background-foreground ring-primary w-32 cursor-pointer rounded-md px-5 py-2.5 text-sm font-semibold ring-2 shadow-xs ring-inset focus-visible:outline-2 focus-visible:outline-offset-2 disabled:cursor-default disabled:opacity-50"
+                  disabled
+                >
+                  Disabled
+                </button>
+              </div>
+              <div class="text-primary-foreground max-w-4xl rounded-lg bg-[#000]/50 p-8 text-justify dark:bg-[#fff]/50">
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus autem, deleniti expedita, incidunt
+                  maiores nobis, nostrum pariatur perferendis quasi saepe sapiente soluta tempora unde velit veniam vero
+                  voluptas voluptate voluptatem.
+                </p>
+              </div>
+            </section>
+
+            <!-- Contact -->
+            <section id="contact" class="flex min-h-dvh flex-col items-center justify-center gap-6 px-4 sm:px-6">
+              <div class="line-y line-color-secondary/50 py-5">
+                <div class="flex flex-wrap justify-center gap-10 text-8xl">
+                  <i class="text-primary hover:text-background-foreground fab fa-github cursor-pointer"></i>
+                  <i class="text-primary hover:text-background-foreground fab fa-codepen cursor-pointer"></i>
+                  <i class="text-primary hover:text-background-foreground fab fa-linkedin-in cursor-pointer"></i>
+                  <i class="text-primary hover:text-background-foreground fab fa-medium cursor-pointer"></i>
+                  <i class="text-primary hover:text-background-foreground fab fa-instagram cursor-pointer"></i>
+                  <i class="text-primary hover:text-background-foreground fab fa-youtube cursor-pointer"></i>
+                </div>
+              </div>
+            </section>
+          </div>
+
+          <!-- Footer -->
+          <footer
+            class="line-y line-color-secondary/50 bg-background text-background-foreground-alt col-start-3 row-start-2 mb-10 py-6 max-sm:col-span-full max-sm:col-start-1"
+          >
+            <div class="px-4 sm:px-6">
+              footer Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est, perferendis.
+            </div>
+          </footer>
+        </div>
+      </main>
+    </div>
     <script type="module" src="/src/main.ts" defer></script>
   </body>
 </html>

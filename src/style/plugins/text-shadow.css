@@ -1,0 +1,15 @@
+@theme inline {
+  /* Text shadow utilities */
+  --text-shadow-xs: 0 0 1px var(--tw-shadow-color, rgb(0 0 0 / 1));
+  --text-shadow-sm: 0 1px 2px var(--tw-shadow-color, rgb(0 0 0 / 1));
+  --text-shadow-md: 0 2px 5px var(--tw-shadow-color, rgb(0 0 0 / 1));
+  --text-shadow-lg: 0 3px 7px var(--tw-shadow-color, rgb(0 0 0 / 1));
+  --text-shadow-xl: 0 4px 9px var(--tw-shadow-color, rgb(0 0 0 / 1));
+  --text-shadow-none: none;
+}
+
+/* Text shadow utilities */
+@utility shadow-text-* {
+  text-shadow: --value(--text-shadow-*);
+  text-shadow: 0 --value(integer)px calc(--value(integer) * 2px) var(--tw-shadow-color);
+}
