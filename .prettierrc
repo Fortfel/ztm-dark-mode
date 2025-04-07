@@ -1,4 +1,5 @@
 {
+    "tailwindStylesheet": "./src/style/tailwind.css",
     "plugins": ["prettier-plugin-tailwindcss"],
     "tailwindFunctions": ["tw"],
     "tailwindPreserveWhitespace": true,

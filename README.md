@@ -2,6 +2,8 @@
 
 This project is built using TypeScript with Vite as the build tool, Tailwind CSS for styling, ESLint for code linting, and TypeDoc for generating documentation.
 
+It's a landing page project that showcases the dark mode theme.
+
 ## Getting Started
 
 ### Prerequisites

@@ -20,7 +20,7 @@
           : 'light'
     </script>
   </head>
-  <body class="bg-background text-background-foreground font-comfortaa m-0 antialiased">
+  <body class="m-0 bg-background font-comfortaa text-background-foreground antialiased">
     <div id="app">
       <!-- Dark Mode Toggle -->
       <div class="fixed top-5 right-6 z-100 flex">
@@ -29,7 +29,7 @@
           <label class="relative inline-block h-8.5 w-15">
             <input type="checkbox" class="peer hidden" id="dark-mode-toggle" />
             <span
-              class="peer-checked:bg-primary absolute inset-0 cursor-pointer rounded-4xl bg-[#cccccc] transition before:absolute before:bottom-1 before:left-1 before:size-6.5 before:rounded-full before:bg-white before:transition before:duration-300 before:ease-in-out peer-checked:before:translate-x-6.5"
+              class="absolute inset-0 cursor-pointer rounded-4xl bg-[#cccccc] transition peer-checked:bg-primary before:absolute before:bottom-1 before:left-1 before:size-6.5 before:rounded-full before:bg-white before:transition before:duration-300 before:ease-in-out peer-checked:before:translate-x-6.5"
             ></span>
           </label>
         </div>
@@ -37,29 +37,29 @@
 
       <!-- Navigation -->
       <header
-        class="bg-background/90 line-b line-color-secondary/50 @container fixed inset-x-0 top-0 z-10 flex h-16 items-center justify-start px-6 pt-3 lg:px-10"
+        class="@container line-b fixed inset-x-0 top-0 z-10 flex h-16 items-center justify-start bg-background/90 px-6 pt-3 line-color-secondary/50 lg:px-10"
       >
         <nav
           id="nav"
-          class="font-oswald flex flex-wrap items-center gap-4 text-base font-bold tracking-[3px] uppercase sm:gap-6 sm:!text-2xl @sm:text-lg"
+          class="flex flex-wrap items-center gap-4 font-oswald text-base font-bold tracking-[3px] uppercase sm:gap-6 sm:!text-2xl @sm:text-lg"
         >
           <a
-            class="text-primary hover:text-background-foreground border-b-3 border-b-transparent hover:border-b-current"
+            class="border-b-3 border-b-transparent text-primary hover:border-b-current hover:text-background-foreground"
             href="#home"
             >Home</a
           >
           <a
-            class="text-primary hover:text-background-foreground border-b-3 border-b-transparent hover:border-b-current"
+            class="border-b-3 border-b-transparent text-primary hover:border-b-current hover:text-background-foreground"
             href="#about"
             >About</a
           >
           <a
-            class="text-primary hover:text-background-foreground border-b-3 border-b-transparent hover:border-b-current"
+            class="border-b-3 border-b-transparent text-primary hover:border-b-current hover:text-background-foreground"
             href="#projects"
             >Projects</a
           >
           <a
-            class="text-primary hover:text-background-foreground border-b-3 border-b-transparent hover:border-b-current"
+            class="border-b-3 border-b-transparent text-primary hover:border-b-current hover:text-background-foreground"
             href="#contact"
             >Contact</a
           >
@@ -72,16 +72,16 @@
           class="grid flex-1 grid-cols-[1fr_var(--gutter-width)_minmax(0,var(--breakpoint-2xl))_var(--gutter-width)_1fr] grid-rows-[1fr_auto] overflow-clip [--gutter-width:--spacing(6)] lg:[--gutter-width:--spacing(10)]"
         >
           <div
-            class="bg-stripes-secondary/20 border-x-secondary/20 col-start-2 row-span-full row-start-1 border-x bg-[size:10px_10px] bg-fixed max-sm:hidden"
+            class="col-start-2 row-span-full row-start-1 border-x border-x-secondary/20 bg-stripes-secondary/20 bg-[size:10px_10px] bg-fixed max-sm:hidden"
           ></div>
           <div
-            class="border-x-secondary/20 bg-stripes-secondary/20 bg-stripes-angle-45 col-start-4 row-span-full row-start-1 border-x bg-[size:10px_10px] bg-fixed max-sm:hidden"
+            class="col-start-4 row-span-full row-start-1 border-x border-x-secondary/20 bg-stripes-secondary/20 bg-[size:10px_10px] bg-fixed bg-stripes-angle-45 max-sm:hidden"
           ></div>
           <div class="col-start-3 row-start-1 max-sm:col-span-full max-sm:col-start-1">
             <!-- Home -->
             <section id="home" class="flex min-h-dvh flex-col items-center justify-center gap-6 px-4 sm:px-6">
               <h1>Custom Title Here</h1>
-              <div class="line-y line-color-secondary/50 bg-background text-background-foreground py-5 text-center">
+              <div class="line-y bg-background py-5 text-center text-background-foreground line-color-secondary/50">
                 <h2>Welcome to the Website!</h2>
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit. A alias beatae esse in natus neque, quis sed
@@ -101,19 +101,19 @@
               <h1>Undraw Illustrations</h1>
               <div class="flex flex-col items-center justify-center gap-6 sm:flex-row">
                 <div
-                  class="bg-background border-secondary shadow-main flex max-w-md flex-1 flex-col gap-5 rounded-xl border px-2.5 py-5 text-center sm:max-w-auto"
+                  class="flex max-w-md flex-1 flex-col gap-5 rounded-xl border border-secondary bg-background px-2.5 py-5 text-center shadow-main sm:max-w-auto"
                 >
                   <h2>Web Innovation</h2>
                   <img src="/images/undraw_proud_coder_light.svg" alt="Proud Coder" class="aspect-3/2" />
                 </div>
                 <div
-                  class="bg-background border-secondary shadow-main flex max-w-md flex-1 flex-col gap-5 rounded-xl border px-2.5 py-5 text-center sm:max-w-auto"
+                  class="flex max-w-md flex-1 flex-col gap-5 rounded-xl border border-secondary bg-background px-2.5 py-5 text-center shadow-main sm:max-w-auto"
                 >
                   <h2>Problem Solving</h2>
                   <img src="/images/undraw_feeling_proud_light.svg" alt="Feeling Proud" class="aspect-3/2" />
                 </div>
                 <div
-                  class="bg-background border-secondary shadow-main flex max-w-md flex-1 flex-col gap-5 rounded-xl border px-2.5 py-5 text-center sm:max-w-auto sm:max-lg:hidden"
+                  class="flex max-w-md flex-1 flex-col gap-5 rounded-xl border border-secondary bg-background px-2.5 py-5 text-center shadow-main sm:max-w-auto sm:max-lg:hidden"
                 >
                   <h2>High Concept</h2>
                   <img src="/images/undraw_conceptual_idea_light.svg" alt="Idea" class="aspect-3/2" />
@@ -126,39 +126,39 @@
               <h1>Buttons</h1>
               <div class="flex flex-wrap justify-center gap-4">
                 <button
-                  class="bg-primary focus-visible:outline-primary disabled:hover:bg-primary hover:bg-primary/80 text-primary-foreground w-32 cursor-pointer rounded-md px-5 py-2.5 text-sm font-semibold shadow-[inset_0_20px_4px_-19px_rgba(255,255,255,0.7)] focus-visible:outline-2 focus-visible:outline-offset-2 disabled:cursor-default disabled:opacity-50"
+                  class="w-32 cursor-pointer rounded-md bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-[inset_0_20px_4px_-19px_rgba(255,255,255,0.7)] hover:bg-primary/80 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary disabled:cursor-default disabled:opacity-50 disabled:hover:bg-primary"
                 >
                   Primary
                 </button>
                 <button
-                  class="bg-secondary focus-visible:outline-secondary disabled:hover:bg-secondary hover:bg-secondary/80 text-primary-foreground w-32 cursor-pointer rounded-md px-5 py-2.5 text-sm font-semibold shadow-[inset_0_20px_4px_-19px_rgba(255,255,255,0.7)] focus-visible:outline-2 focus-visible:outline-offset-2 disabled:cursor-default disabled:opacity-50"
+                  class="w-32 cursor-pointer rounded-md bg-secondary px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-[inset_0_20px_4px_-19px_rgba(255,255,255,0.7)] hover:bg-secondary/80 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary disabled:cursor-default disabled:opacity-50 disabled:hover:bg-secondary"
                 >
                   Secondary
                 </button>
                 <button
-                  class="bg-primary focus-visible:outline-primary disabled:hover:bg-primary hover:bg-primary/80 text-primary-foreground w-32 cursor-pointer rounded-md px-5 py-2.5 text-sm font-semibold shadow-[inset_0_20px_4px_-19px_rgba(255,255,255,0.7)] focus-visible:outline-2 focus-visible:outline-offset-2 disabled:cursor-default disabled:opacity-50"
+                  class="w-32 cursor-pointer rounded-md bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-[inset_0_20px_4px_-19px_rgba(255,255,255,0.7)] hover:bg-primary/80 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary disabled:cursor-default disabled:opacity-50 disabled:hover:bg-primary"
                   disabled
                 >
                   Disabled
                 </button>
                 <button
-                  class="bg-background focus-visible:outline-primary disabled:hover:bg-background hover:bg-primary hover:text-primary-foreground text-background-foreground ring-primary disabled:hover:text-background-foreground w-32 cursor-pointer rounded-md px-5 py-2.5 text-sm font-semibold ring-2 shadow-xs ring-inset focus-visible:outline-2 focus-visible:outline-offset-2 disabled:cursor-default disabled:opacity-50"
+                  class="w-32 cursor-pointer rounded-md bg-background px-5 py-2.5 text-sm font-semibold text-background-foreground ring-2 shadow-xs ring-primary ring-inset hover:bg-primary hover:text-primary-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary disabled:cursor-default disabled:opacity-50 disabled:hover:bg-background disabled:hover:text-background-foreground"
                 >
                   Outline
                 </button>
                 <button
-                  class="bg-background focus-visible:outline-secondary disabled:hover:bg-background hover:bg-secondary hover:text-primary-foreground text-background-foreground ring-secondary disabled:hover:text-background-foreground w-32 cursor-pointer rounded-md px-5 py-2.5 text-sm font-semibold ring-2 shadow-xs ring-inset focus-visible:outline-2 focus-visible:outline-offset-2 disabled:cursor-default disabled:opacity-50"
+                  class="w-32 cursor-pointer rounded-md bg-background px-5 py-2.5 text-sm font-semibold text-background-foreground ring-2 shadow-xs ring-secondary ring-inset hover:bg-secondary hover:text-primary-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary disabled:cursor-default disabled:opacity-50 disabled:hover:bg-background disabled:hover:text-background-foreground"
                 >
                   Alt Outline
                 </button>
                 <button
-                  class="bg-background focus-visible:outline-primary disabled:hover:bg-background hover:bg-primary hover:text-primary-foreground disabled:hover:text-background-foreground text-background-foreground ring-primary w-32 cursor-pointer rounded-md px-5 py-2.5 text-sm font-semibold ring-2 shadow-xs ring-inset focus-visible:outline-2 focus-visible:outline-offset-2 disabled:cursor-default disabled:opacity-50"
+                  class="w-32 cursor-pointer rounded-md bg-background px-5 py-2.5 text-sm font-semibold text-background-foreground ring-2 shadow-xs ring-primary ring-inset hover:bg-primary hover:text-primary-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary disabled:cursor-default disabled:opacity-50 disabled:hover:bg-background disabled:hover:text-background-foreground"
                   disabled
                 >
                   Disabled
                 </button>
               </div>
-              <div class="text-primary-foreground max-w-4xl rounded-lg bg-[#000]/50 p-8 text-justify dark:bg-[#fff]/50">
+              <div class="max-w-4xl rounded-lg bg-[#000]/50 p-8 text-justify text-primary-foreground dark:bg-[#fff]/50">
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus autem, deleniti expedita, incidunt
                   maiores nobis, nostrum pariatur perferendis quasi saepe sapiente soluta tempora unde velit veniam vero
@@ -169,14 +169,14 @@
 
             <!-- Contact -->
             <section id="contact" class="flex min-h-dvh flex-col items-center justify-center gap-6 px-4 sm:px-6">
-              <div class="line-y line-color-secondary/50 py-5">
+              <div class="line-y py-5 line-color-secondary/50">
                 <div class="flex flex-wrap justify-center gap-10 text-8xl">
-                  <i class="text-primary hover:text-background-foreground fab fa-github cursor-pointer"></i>
-                  <i class="text-primary hover:text-background-foreground fab fa-codepen cursor-pointer"></i>
-                  <i class="text-primary hover:text-background-foreground fab fa-linkedin-in cursor-pointer"></i>
-                  <i class="text-primary hover:text-background-foreground fab fa-medium cursor-pointer"></i>
-                  <i class="text-primary hover:text-background-foreground fab fa-instagram cursor-pointer"></i>
-                  <i class="text-primary hover:text-background-foreground fab fa-youtube cursor-pointer"></i>
+                  <i class="fab fa-github cursor-pointer text-primary hover:text-background-foreground"></i>
+                  <i class="fab fa-codepen cursor-pointer text-primary hover:text-background-foreground"></i>
+                  <i class="fab fa-linkedin-in cursor-pointer text-primary hover:text-background-foreground"></i>
+                  <i class="fab fa-medium cursor-pointer text-primary hover:text-background-foreground"></i>
+                  <i class="fab fa-instagram cursor-pointer text-primary hover:text-background-foreground"></i>
+                  <i class="fab fa-youtube cursor-pointer text-primary hover:text-background-foreground"></i>
                 </div>
               </div>
             </section>
@@ -184,7 +184,7 @@
 
           <!-- Footer -->
           <footer
-            class="line-y line-color-secondary/50 bg-background text-background-foreground-alt col-start-3 row-start-2 mb-10 py-6 max-sm:col-span-full max-sm:col-start-1"
+            class="line-y col-start-3 row-start-2 mb-10 bg-background py-6 text-background-foreground-alt line-color-secondary/50 max-sm:col-span-full max-sm:col-start-1"
           >
             <div class="px-4 sm:px-6">
               footer Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est, perferendis.
